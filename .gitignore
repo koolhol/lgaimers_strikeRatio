@@ -1,0 +1,24 @@
+# Competition data and generated predictions
+data/
+**/data/
+**/output/
+dist/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv*/
+.uv-cache/
+.pytest_cache/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# CatBoost runtime files
+catboost_info/
+

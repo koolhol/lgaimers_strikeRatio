@@ -1,0 +1,29 @@
+{
+  "experiment_id": 472,
+  "created_at": "2026-09-01",
+  "reference": "s11, official score 1046.2789329284",
+  "validation_source": 471,
+  "deployment_train_seasons": [2019, 2020, 2021, 2022, 2023, 2024],
+  "experts": ["same", "opposite"],
+  "season_decay": 0.65,
+  "thread_count": 4,
+  "used_ram_limit": "10gb",
+  "catboost": {
+    "iterations": 700,
+    "learning_rate": 0.03,
+    "depth": 7,
+    "l2_leaf_reg": 30.0,
+    "random_strength": 0.7,
+    "bootstrap_type": "Bernoulli",
+    "subsample": 0.8,
+    "random_seed": 469
+  },
+  "calibration_ridge": 10000.0,
+  "calibration_season_decay": 0.65,
+  "rules": [
+    "Refit the two frozen 469 expert definitions on all official 2019-2024 Train rows",
+    "Fit the 2025 expert calibrator from frozen 2022-2024 rolling OOF predictions only",
+    "Use the projection, scale, and rank weight selected by experiment 471 unchanged",
+    "Do not inspect Test targets or tune from leaderboard feedback"
+  ]
+}

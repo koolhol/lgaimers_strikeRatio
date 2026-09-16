@@ -1,0 +1,19 @@
+{
+  "experiment_id": 471,
+  "created_at": "2026-09-01",
+  "reference": "s11, official score 1046.2789329284",
+  "source": "frozen same/opposite-hand expert predictions from 469",
+  "selection_season": 2022,
+  "confirmation_seasons": [2023, 2024],
+  "rank_weight_bounds": [0.0, 0.5],
+  "selection_target_cap": 0.0,
+  "confirmation_target_cap": 0.0001,
+  "minimum_recent_mean_improvement_vs_s11": 0.000025,
+  "rules": [
+    "Freeze all s11 and 469 OOF predictions",
+    "On 2022 only, remove the intercept and s11-logit projection from the 469-vs-s11 logit difference",
+    "Fit one nonnegative rank-residual weight on 2022 with both target classes constrained non-worse",
+    "Apply the frozen projection and weight unchanged to 2023 and 2024",
+    "Do not use evaluation-year targets for fitting and do not access Test"
+  ]
+}

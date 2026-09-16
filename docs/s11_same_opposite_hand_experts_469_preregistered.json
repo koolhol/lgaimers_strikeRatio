@@ -1,0 +1,32 @@
+{
+  "experiment_id": 469,
+  "created_at": "2026-08-31",
+  "reference": "s11, official score 1046.2789329284",
+  "evaluation_seasons": [2022, 2023, 2024],
+  "experts": ["same", "opposite"],
+  "season_decay": 0.65,
+  "thread_count": 4,
+  "used_ram_limit": "10gb",
+  "catboost": {
+    "iterations": 700,
+    "learning_rate": 0.03,
+    "depth": 7,
+    "l2_leaf_reg": 30.0,
+    "random_strength": 0.7,
+    "bootstrap_type": "Bernoulli",
+    "subsample": 0.8,
+    "random_seed": 469
+  },
+  "calibration_ridge": 10000.0,
+  "calibration_season_decay": 0.65,
+  "selection_target_cap": 0.0,
+  "maximum_confirmation_target_loss_vs_s11": 0.0001,
+  "minimum_recent_mean_improvement_vs_s11": 0.000025,
+  "rules": [
+    "Train two independent full-142 CatBoost experts for same-hand and opposite-hand matchups",
+    "Route using only current-row official pitcher and batter handedness",
+    "Use expanding rolling folds with fixed season decay",
+    "Select phase and matchup-model weights on 2022 only",
+    "Confirm exactly once on 2023 and 2024; do not access Test"
+  ]
+}

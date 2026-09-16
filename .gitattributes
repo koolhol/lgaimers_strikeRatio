@@ -1,0 +1,9 @@
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.sha256 text eol=lf
+final_model/requirements.txt text eol=lf
+final_model/model/*.txt -text
+final_model/model/*.cbm -text
+*.ps1 text eol=crlf
